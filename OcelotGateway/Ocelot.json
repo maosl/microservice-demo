@@ -1,0 +1,27 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/orders",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/orders",
+      "UpstreamHttpMethod": [ "Get" ],
+      "ServiceName": "order-service"
+    },
+    {
+      "DownstreamPathTemplate": "/api/products",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/products",
+      "UpstreamHttpMethod": [ "Get" ],
+      "ServiceName": "product-service"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://10.48.83.93:5000",
+    "ServiceDiscoveryProvider": {
+      "Scheme": "http",
+      "Host": "192.168.60.130",
+      "Port": 8500,
+      "Type": "Consul"
+    }
+  }
+}
